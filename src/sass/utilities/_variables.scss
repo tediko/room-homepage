@@ -1,0 +1,15 @@
+/* Colors */
+$c-white: hsl(0, 0%, 100%);
+$c-black: hsl(0, 0%, 0%);
+$c-gray-dark: hsl(0, 0%, 63%);
+$c-gray-very-dark: hsl(0, 0%, 27%);
+
+/* Fonts */
+$ff-primary: 'Spartan', sans-serif;
+
+/* Media query breakpoints */
+$breakpoints: (
+    'sm': 481px,
+    'md': 769px,
+    'lg': 1025px
+);
