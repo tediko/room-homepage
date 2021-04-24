@@ -1,0 +1,23 @@
+{
+  "name": "room-homepage",
+  "version": "1.0.0",
+  "description": "![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/sass:dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tediko/room-homepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tediko/room-homepage/issues"
+  },
+  "homepage": "https://github.com/tediko/room-homepage#readme",
+  "devDependencies": {
+    "sass": "^1.32.11"
+  }
+}
