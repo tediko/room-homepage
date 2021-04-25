@@ -183,6 +183,9 @@ i {
   background: #262626;
   z-index: 1;
 }
+.kv__hero-controls-btn:focus:not(:focus-visible) {
+  outline: none;
+}
 .kv__intro {
   padding: 72px 32px 64px 32px;
 }
@@ -248,6 +251,9 @@ i {
   outline: 2px dashed #FF4136;
   outline-offset: 4px;
   color: #999999;
+}
+.kv__intro-link:focus:not(:focus-visible) {
+  outline: none;
 }
 .kv__intro-link-icon {
   display: inline-block;

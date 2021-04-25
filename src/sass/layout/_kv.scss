@@ -94,6 +94,12 @@
             background: lighten($c-black, 15);
             z-index: 1;
         }
+
+        // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
+        // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
     }
 
     &__intro {
@@ -161,6 +167,12 @@
             outline: 2px dashed $c-red;
             outline-offset: 4px;
             color: lighten($c-black, 60);
+        }
+
+        // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
+        // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
+        &:focus:not(:focus-visible) {
+            outline: none;
         }
     }
 
