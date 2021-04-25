@@ -6,11 +6,20 @@
     &__container {
         display: flex;
         flex-flow: column;
+
+        @include breakpoint('md') {
+            flex-flow: row;
+        }
     }
 
     &__hero {
         position: relative;
         height: 360px;
+        
+        @include breakpoint('md') {
+            flex: 1 2 840px;
+            height: 534px;
+        }
     }
 
     &__hero-bg {
@@ -25,14 +34,26 @@
 
         &--1 {
             background-image: url('../img/mobile-image-hero-1.jpg');
+
+            @include breakpoint('md') {
+                background-image: url('../img/desktop-image-hero-1.jpg');
+            }
         }
 
         &--2 {
             background-image: url('../img/mobile-image-hero-2.jpg');
+
+            @include breakpoint('md') {
+                background-image: url('../img/desktop-image-hero-2.jpg');
+            }
         }
 
         &--3 {
             background-image: url('../img/mobile-image-hero-3.jpg');
+
+            @include breakpoint('md') {
+                background-image: url('../img/desktop-image-hero-3.jpg');
+            }
         }
     }
 
@@ -41,6 +62,11 @@
         display: flex;
         bottom: 0;
         right: 0;
+
+        @include breakpoint('md') {
+            right: unset;
+            left: 100%;
+        }
     }
 
     &__hero-controls-btn {
@@ -52,17 +78,52 @@
         font-size: 30px;
         padding: 0;
         cursor: pointer;
+
+        @include breakpoint('md') {
+            transition: background 250ms ease-in;
+            width: 80px;
+            height: 80px;
+
+            &:hover {
+                background: lighten($c-black, 15);
+            }
+        }
+
+        &:focus {
+            outline: 2px dashed red;
+            background: lighten($c-black, 15);
+            z-index: 1;
+        }
     }
 
     &__intro {
         padding: 72px 32px 64px 32px;
+
+        @include breakpoint('md') {
+            display: flex;
+            flex: 1 1 600px;
+            flex-flow: column;
+            justify-content: center;
+            padding: 0 5.25vw 32px 7vw;
+        }
     }
 
     &__intro-heading {
         font-size: 2.33rem;
         font-weight: 600;
         letter-spacing: -1px;
+        line-height: 1.1;
         margin-bottom: 16px;
+
+        @include breakpoint('md') {
+            font-size: 3rem;
+            letter-spacing: -2px;
+        }
+
+        @include breakpoint('lg') {
+            margin-bottom: 25px;
+            font-size: 3.33rem;
+        }
     }
 
     &__intro-text {
@@ -70,17 +131,41 @@
         line-height: 1.66rem;
         font-size: 1rem;
         margin-bottom: 40px;
+
+        @include breakpoint('lg') {
+            max-width: 470px;
+        }
     }
 
     &__intro-link {
-        font-weight: 700;
+        align-self: flex-start;
+        font-weight: 500;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 10px;
         color: $c-black;
+
+        @include breakpoint('md') {
+            transition: color 250ms ease-in;
+            
+            &:hover {
+                color: lighten($c-black, 60);
+
+                #{$root}__intro-link-icon {
+                    transform: translateX(30px);
+                }
+            }
+        }
+
+        &:focus {
+            outline: 2px dashed red;
+            outline-offset: 4px;
+        }
     }
 
     &__intro-link-icon {
+        display: inline-block;
         margin-left: 24px;
+        transition: transform 700ms cubic-bezier(0.68, -1.8, 0.32, 1.6);
     }
 }
