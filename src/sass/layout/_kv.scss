@@ -160,6 +160,7 @@
         &:focus {
             outline: 2px dashed $c-red;
             outline-offset: 4px;
+            color: lighten($c-black, 60);
         }
     }
 

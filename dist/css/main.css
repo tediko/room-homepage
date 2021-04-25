@@ -247,6 +247,7 @@ i {
 .kv__intro-link:focus {
   outline: 2px dashed #FF4136;
   outline-offset: 4px;
+  color: #999999;
 }
 .kv__intro-link-icon {
   display: inline-block;
