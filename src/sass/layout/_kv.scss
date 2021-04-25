@@ -90,7 +90,7 @@
         }
 
         &:focus {
-            outline: 2px dashed red;
+            outline: 2px dashed $c-red;
             background: lighten($c-black, 15);
             z-index: 1;
         }
@@ -158,7 +158,7 @@
         }
 
         &:focus {
-            outline: 2px dashed red;
+            outline: 2px dashed $c-red;
             outline-offset: 4px;
         }
     }

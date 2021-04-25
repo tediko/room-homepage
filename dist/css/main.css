@@ -179,7 +179,7 @@ i {
   }
 }
 .kv__hero-controls-btn:focus {
-  outline: 2px dashed red;
+  outline: 2px dashed #FF4136;
   background: #262626;
   z-index: 1;
 }
@@ -245,7 +245,7 @@ i {
   }
 }
 .kv__intro-link:focus {
-  outline: 2px dashed red;
+  outline: 2px dashed #FF4136;
   outline-offset: 4px;
 }
 .kv__intro-link-icon {
