@@ -1,0 +1,161 @@
+@use '../utilities/' as *;
+
+.header {
+    $root: &;
+    position: absolute;
+    padding: 45px 28px 0px 28px;
+    width: 100%;
+    z-index: 1;
+
+    &__container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+
+    &__logo-link {
+        order: 1;
+        justify-self: center;
+        margin-left: -24px;
+        margin-top: 4px;
+
+        &:focus {
+            outline: 2px dashed $c-red;
+            outline-offset: 4px;
+        }
+
+        // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
+        // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
+    }
+
+    &__nav {
+        &.hamburger--active {
+            #{$root}__hamburger-bars {
+                transition-delay: 75ms;
+                transform: translate3d(0,10px,0) rotate(135deg);
+                top: -1px;
+                background-color: $c-gray-dark;
+
+                &::before {
+                    transition-delay: 0s;
+                    opacity: 0;
+                    background-color: $c-gray-dark;
+                }
+
+                &::after {
+                    transition-delay: 75ms;
+                    transform: translate3d(0,-14px,0) rotate(-270deg);
+                    background-color: $c-gray-dark;
+                }
+            }
+        }
+
+        &.nav-open {
+            #{$root}__nav-list {
+                display: flex;
+                animation: navin 500ms ease-in forwards;
+            }
+        }
+
+        &.nav-close {
+            #{$root}__nav-list {
+                animation: navout 500ms ease-in-out forwards;
+            }
+        }
+    }
+
+    &__hamburger {
+        position: relative;
+        display: flex;
+        width: 24px;
+        height: 20px;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        z-index: 2;
+
+        &:focus {
+            outline: 2px dashed $c-red;
+            outline-offset: 4px;
+        }
+
+        // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
+        // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
+    }
+
+    &__hamburger-bars {
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background-color: $c-white;
+        top: 2px;
+        transition: transform 575ms cubic-bezier(.68,-.55,.265,1.55),
+                    top 500ms ease-in,
+                    background-color 500ms ease-in-out;
+
+        &::before, &::after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: 24px;
+            height: 2px;
+            background-color: $c-white;
+        }
+
+        &::before {
+            top: 7px;
+            transition: opacity .055s ease .275s,
+                        background-color 500ms ease-in-out;
+        }
+
+        &::after {
+            top: 14px;
+            transition: transform 575ms cubic-bezier(.68,-.55,.265,1.55),
+                        background-color 500ms ease-in-out;
+        }
+    }
+
+    &__nav-list {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        top: -108px;
+        left: 0;
+        height: 108px;
+        width: 100vw;
+        margin: 0;
+        padding: 0 0 0 40px;
+        list-style: none;
+        background: $c-white;
+    }
+
+    &__nav-item {
+        margin-top: 6px;
+
+        &:not(:last-child) {
+            margin-right: 5.5vw;
+        }
+    }
+
+    &__nav-link {
+        position: relative;
+        font-size: 1.16rem;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: lowercase;
+        color: $c-black;
+        
+        &:focus {
+            outline: 2px dashed $c-red;
+            outline-offset: 4px;
+        }
+    }
+}
