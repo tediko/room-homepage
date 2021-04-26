@@ -123,7 +123,9 @@ i {
   background: rgba(0, 0, 0, 0.5);
   z-index: 5;
   pointer-events: none;
-  transition: opacity 300ms ease-in;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: opacity 500ms, backdrop-filter 500ms;
 }
 #overlay.active {
   opacity: 1;
