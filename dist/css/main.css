@@ -378,7 +378,7 @@ i {
   background: black;
   border: none;
   color: white;
-  font-size: 30px;
+  font-size: 2.5rem;
   padding: 0;
   cursor: pointer;
 }
@@ -392,9 +392,13 @@ i {
     background: #262626;
   }
 }
+@media (min-width: 1025px) {
+  .kv__hero-controls-btn {
+    font-size: 3.5rem;
+  }
+}
 .kv__hero-controls-btn:focus {
   outline: 2px dashed #FF4136;
-  background: #262626;
   z-index: 1;
 }
 .kv__hero-controls-btn:focus:not(:focus-visible) {

@@ -75,7 +75,7 @@
         background: $c-black;
         border: none;
         color: white;
-        font-size: 30px;
+        font-size: 2.5rem;
         padding: 0;
         cursor: pointer;
 
@@ -89,9 +89,12 @@
             }
         }
 
+        @include breakpoint('lg') {
+            font-size: 3.5rem;
+        }
+
         &:focus {
             outline: 2px dashed $c-red;
-            background: lighten($c-black, 15);
             z-index: 1;
         }
 
