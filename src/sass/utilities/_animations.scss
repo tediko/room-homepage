@@ -1,0 +1,21 @@
+@keyframes navin {
+    0% {
+        top: -108px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes navout {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    100% {
+        top: -108px;
+        opacity: 0;
+    }
+}
