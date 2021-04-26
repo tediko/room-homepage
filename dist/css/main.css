@@ -133,7 +133,7 @@ i {
   position: absolute;
   padding: 45px 28px 0 28px;
   width: 100%;
-  z-index: 1;
+  z-index: 6;
 }
 @media (min-width: 1025px) {
   .header {
