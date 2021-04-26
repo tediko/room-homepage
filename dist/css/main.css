@@ -115,9 +115,14 @@ i {
 
 .header {
   position: absolute;
-  padding: 45px 28px 0px 28px;
+  padding: 45px 28px 0 28px;
   width: 100%;
   z-index: 1;
+}
+@media (min-width: 1025px) {
+  .header {
+    padding: 60px 64px 0 64px;
+  }
 }
 .header__container {
   display: grid;
@@ -129,6 +134,15 @@ i {
   justify-self: center;
   margin-left: -24px;
   margin-top: 4px;
+}
+@media (min-width: 1025px) {
+  .header__logo-link {
+    order: 0;
+    justify-self: unset;
+    margin-left: 0;
+    margin-top: 0;
+    margin: 0 56px 0 0;
+  }
 }
 .header__logo-link:focus {
   outline: 2px dashed #FF4136;
@@ -170,6 +184,11 @@ i {
   padding: 0;
   cursor: pointer;
   z-index: 2;
+}
+@media (min-width: 1025px) {
+  .header__hamburger {
+    display: none;
+  }
 }
 .header__hamburger:focus {
   outline: 2px dashed #FF4136;
@@ -216,11 +235,31 @@ i {
   list-style: none;
   background: white;
 }
+@media (min-width: 1025px) {
+  .header__nav-list {
+    position: relative;
+    display: flex;
+    top: unset;
+    left: unset;
+    height: unset;
+    width: unset;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    background: transparent;
+    margin-bottom: 7px;
+  }
+}
 .header__nav-item {
   margin-top: 6px;
 }
 .header__nav-item:not(:last-child) {
   margin-right: 5.5vw;
+}
+@media (min-width: 1025px) {
+  .header__nav-item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 .header__nav-link {
   position: relative;
@@ -230,9 +269,42 @@ i {
   text-transform: lowercase;
   color: black;
 }
+@media (min-width: 769px) {
+  .header__nav-link:hover::before {
+    width: 100%;
+    opacity: 1;
+  }
+  .header__nav-link::before {
+    position: absolute;
+    content: "";
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: black;
+    opacity: 0;
+    transition: width 300ms ease-in, opacity 300ms ease-in;
+  }
+}
+@media (min-width: 769px) and (min-width: 1025px) {
+  .header__nav-link::before {
+    background: white;
+  }
+}
+@media (min-width: 1025px) {
+  .header__nav-link {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
 .header__nav-link:focus {
   outline: 2px dashed #FF4136;
   outline-offset: 4px;
+}
+.header__nav-link:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .kv__container {

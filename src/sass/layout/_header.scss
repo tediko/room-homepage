@@ -3,9 +3,13 @@
 .header {
     $root: &;
     position: absolute;
-    padding: 45px 28px 0px 28px;
+    padding: 45px 28px 0 28px;
     width: 100%;
     z-index: 1;
+
+    @include breakpoint('lg') {
+        padding: 60px 64px 0 64px;
+    }
 
     &__container {
         display: grid;
@@ -18,6 +22,14 @@
         justify-self: center;
         margin-left: -24px;
         margin-top: 4px;
+
+        @include breakpoint('lg') {
+            order: 0;
+            justify-self: unset;
+            margin-left: 0;
+            margin-top: 0;
+            margin: 0 56px 0 0;
+        }
 
         &:focus {
             outline: 2px dashed $c-red;
@@ -78,6 +90,10 @@
         cursor: pointer;
         z-index: 2;
 
+        @include breakpoint('lg') {
+            display: none;
+        }
+
         &:focus {
             outline: 2px dashed $c-red;
             outline-offset: 4px;
@@ -135,6 +151,20 @@
         padding: 0 0 0 40px;
         list-style: none;
         background: $c-white;
+
+        @include breakpoint('lg') {
+            position: relative;
+            display: flex;
+            top: unset;
+            left: unset;
+            height: unset;
+            width: unset;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 0;
+            background: transparent;
+            margin-bottom: 7px;
+        }
     }
 
     &__nav-item {
@@ -142,6 +172,10 @@
 
         &:not(:last-child) {
             margin-right: 5.5vw;
+
+            @include breakpoint('lg') {
+                margin-right: 30px;
+            }
         }
     }
 
@@ -153,9 +187,48 @@
         text-transform: lowercase;
         color: $c-black;
         
+        @include breakpoint('md') {
+            &:hover {
+                &::before {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0%;
+                height: 2px;
+                background: $c-black;
+                opacity: 0;
+                transition: width 300ms ease-in,
+                            opacity 300ms ease-in;
+
+                @include breakpoint('lg') {
+                    background: $c-white;
+                }
+            }
+        }
+
+        @include breakpoint('lg') {
+            color: $c-white;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
         &:focus {
             outline: 2px dashed $c-red;
             outline-offset: 4px;
+        }
+        
+        // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
+        // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
+        &:focus:not(:focus-visible) {
+            outline: none;
         }
     }
 }
