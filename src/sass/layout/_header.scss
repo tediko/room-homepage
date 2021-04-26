@@ -5,24 +5,24 @@
     position: absolute;
     padding: 45px 28px 0 28px;
     width: 100%;
-    z-index: 6;
-
+    
     @include breakpoint('lg') {
         padding: 60px 64px 0 64px;
     }
-
+    
     &__container {
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
     }
-
+    
     &__logo-link {
         order: 1;
         justify-self: center;
         margin-left: -24px;
         margin-top: 4px;
-
+        z-index: 1;
+        
         @include breakpoint('lg') {
             order: 0;
             justify-self: unset;
@@ -30,27 +30,28 @@
             margin-top: 0;
             margin: 0 56px 0 0;
         }
-
+        
         &:focus {
             outline: 2px dashed $c-red;
             outline-offset: 4px;
         }
-
+        
         // Browsers that don’t support :focus-visible use the focus styles defined in the :focus rule and ignore the second style rule completely (because :focus-visible is unknown to them).
         // Browsers should now only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard.
         &:focus:not(:focus-visible) {
             outline: none;
         }
     }
-
+    
     &__nav {
+        z-index: 5;
         &.hamburger--active {
             #{$root}__hamburger-bars {
                 transition-delay: 75ms;
                 transform: translate3d(0,10px,0) rotate(135deg);
                 top: -1px;
                 background-color: $c-gray-dark;
-
+                
                 &::before {
                     transition-delay: 0s;
                     opacity: 0;

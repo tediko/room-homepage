@@ -133,7 +133,6 @@ i {
   position: absolute;
   padding: 45px 28px 0 28px;
   width: 100%;
-  z-index: 6;
 }
 @media (min-width: 1025px) {
   .header {
@@ -150,6 +149,7 @@ i {
   justify-self: center;
   margin-left: -24px;
   margin-top: 4px;
+  z-index: 1;
 }
 @media (min-width: 1025px) {
   .header__logo-link {
@@ -166,6 +166,9 @@ i {
 }
 .header__logo-link:focus:not(:focus-visible) {
   outline: none;
+}
+.header__nav {
+  z-index: 5;
 }
 .header__nav.hamburger--active .header__hamburger-bars {
   transition-delay: 75ms;
