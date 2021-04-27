@@ -71,6 +71,32 @@ ol[role=list] {
     opacity: 0;
   }
 }
+@keyframes bgIn {
+  0% {
+    opacity: 0;
+    clip-path: ellipse(0 100% at 0% 50%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: ellipse(110% 150% at 0% 50%);
+  }
+}
+@keyframes bgOut {
+  0% {
+    opacity: 0;
+    clip-path: ellipse(0 100% at 100% 50%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: ellipse(110% 150% at 100% 50%);
+  }
+}
 html {
   font-size: 12px;
 }
@@ -174,6 +200,13 @@ i {
 }
 .kv__hero-bg--1 {
   background-image: url("../img/mobile-image-hero-1.jpg");
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
+}
+.kv__hero-bg--1.slide-right {
+  animation: bgIn 1000ms ease-in-out forwards;
+}
+.kv__hero-bg--1.slide-left {
+  animation: bgOut 1000ms ease-in-out forwards;
 }
 @media (min-width: 769px) {
   .kv__hero-bg--1 {
@@ -182,6 +215,13 @@ i {
 }
 .kv__hero-bg--2 {
   background-image: url("../img/mobile-image-hero-2.jpg");
+  clip-path: polygon(0px 0, 0 0, 0 100%, 0px 100%);
+}
+.kv__hero-bg--2.slide-right {
+  animation: bgIn 1000ms ease-in-out forwards;
+}
+.kv__hero-bg--2.slide-left {
+  animation: bgOut 1000ms ease-in-out forwards;
 }
 @media (min-width: 769px) {
   .kv__hero-bg--2 {
@@ -190,6 +230,13 @@ i {
 }
 .kv__hero-bg--3 {
   background-image: url("../img/mobile-image-hero-3.jpg");
+  clip-path: polygon(0px 0, 0 0, 0 100%, 0px 100%);
+}
+.kv__hero-bg--3.slide-right {
+  animation: bgIn 1000ms ease-in-out forwards;
+}
+.kv__hero-bg--3.slide-left {
+  animation: bgOut 1000ms ease-in-out forwards;
 }
 @media (min-width: 769px) {
   .kv__hero-bg--3 {
@@ -207,6 +254,9 @@ i {
     right: unset;
     left: 100%;
   }
+}
+.kv__hero-controls i {
+  pointer-events: none;
 }
 .kv__hero-controls-btn {
   width: 56px;
