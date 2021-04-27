@@ -3,14 +3,31 @@
 .about {
     $root: &;
 
+    @include breakpoint('md') {
+        height: 33vh;
+    }
+
     &__container {
         display: grid;
         grid-template-columns: 1fr;
+
+        @include breakpoint('md') {
+            grid-template-columns: 25vw auto 25vw;
+            height: 100%;
+        }
+        
+        @include breakpoint('lg') {
+            grid-template-columns: 30.55vw auto 30.55vw;
+        }
     }
 
     &__decorative {
         position: relative;
         height: 275px;
+
+        @include breakpoint('md') {
+            height: unset;
+        }
     }
 
     &__bg {
@@ -24,16 +41,27 @@
         background-size: cover;
 
         &--1 {
+            @extend #{$root}__bg;
+            
             background-image: url('../img/image-about-dark.jpg');
         }
 
         &--2 {
+            @extend #{$root}__bg;
+
             background-image: url('../img/image-about-light.jpg');
         }
     }
 
     &__info {
         padding: 72px 32px 64px 32px;
+
+        @include breakpoint('md') {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding: 48px;
+        }
     }
 
     &__heading {
