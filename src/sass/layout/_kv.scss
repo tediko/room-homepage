@@ -39,6 +39,7 @@
         background-size: cover;
 
         &--1 {
+            @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-1.jpg');
 
             @include breakpoint('md') {
@@ -47,6 +48,7 @@
         }
 
         &--2 {
+            @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-2.jpg');
 
             @include breakpoint('md') {
@@ -55,6 +57,7 @@
         }
 
         &--3 {
+            @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-3.jpg');
 
             @include breakpoint('md') {

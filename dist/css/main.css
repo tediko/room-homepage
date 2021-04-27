@@ -157,7 +157,7 @@ i {
     height: 100%;
   }
 }
-.kv__hero-bg {
+.kv__hero-bg, .kv__hero-bg--3, .kv__hero-bg--2, .kv__hero-bg--1 {
   position: absolute;
   top: 0;
   left: 0;
