@@ -130,6 +130,11 @@ i {
 #overlay.active {
   opacity: 1;
 }
+@media (min-width: 1025px) {
+  #overlay.active {
+    opacity: 0;
+  }
+}
 
 @media (min-width: 769px) {
   .kv {

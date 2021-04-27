@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 #overlay {
     $root: &;
@@ -18,5 +19,9 @@
 
     &.active {
         opacity: 1;
+
+        @include breakpoint('lg') {
+            opacity: 0;
+        }
     }
 }
