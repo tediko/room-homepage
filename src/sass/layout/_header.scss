@@ -5,9 +5,22 @@
     position: absolute;
     padding: 45px 28px 0 28px;
     width: 100%;
+    z-index: 5;
     
     @include breakpoint('lg') {
         padding: 60px 64px 0 64px;
+    }
+
+    &.nav-scroll {
+        position: fixed;
+
+        #{$root}__nav::before {
+            opacity: 1;
+        }
+
+        #{$root}__logo-link {
+            display: none;
+        }
     }
     
     &__container {
@@ -45,6 +58,19 @@
     
     &__nav {
         z-index: 5;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 31px;
+            left: 15px;
+            width: 50px;
+            height: 50px;
+            background: $c-red;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
         &.hamburger--active {
             #{$root}__hamburger-bars {
                 transition-delay: 75ms;

@@ -314,11 +314,21 @@ i {
   position: absolute;
   padding: 45px 28px 0 28px;
   width: 100%;
+  z-index: 5;
 }
 @media (min-width: 1025px) {
   .header {
     padding: 60px 64px 0 64px;
   }
+}
+.header.nav-scroll {
+  position: fixed;
+}
+.header.nav-scroll .header__nav::before {
+  opacity: 1;
+}
+.header.nav-scroll .header__logo-link {
+  display: none;
 }
 .header__container {
   display: grid;
@@ -350,6 +360,17 @@ i {
 }
 .header__nav {
   z-index: 5;
+}
+.header__nav::before {
+  position: absolute;
+  content: "";
+  top: 31px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  background: #FF4136;
+  border-radius: 50%;
+  opacity: 0;
 }
 .header__nav.hamburger--active .header__hamburger-bars {
   transition-delay: 75ms;
