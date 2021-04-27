@@ -41,6 +41,15 @@
         &--1 {
             @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-1.jpg');
+            clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
+
+            &.slide-right {
+                animation: bgIn 1000ms ease-in-out forwards;
+            }
+
+            &.slide-left {
+                animation: bgOut 1000ms ease-in-out forwards;
+            }
 
             @include breakpoint('md') {
                 background-image: url('../img/desktop-image-hero-1.jpg');
@@ -50,6 +59,15 @@
         &--2 {
             @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-2.jpg');
+            clip-path: polygon(0px 0, 0 0, 0 100%, 0px 100%);
+
+            &.slide-right {
+                animation: bgIn 1000ms ease-in-out forwards;
+            }
+
+            &.slide-left {
+                animation: bgOut 1000ms ease-in-out forwards;
+            }
 
             @include breakpoint('md') {
                 background-image: url('../img/desktop-image-hero-2.jpg');
@@ -59,6 +77,15 @@
         &--3 {
             @extend #{$root}__hero-bg;
             background-image: url('../img/mobile-image-hero-3.jpg');
+            clip-path: polygon(0px 0, 0 0, 0 100%, 0px 100%);
+
+            &.slide-right {
+                animation: bgIn 1000ms ease-in-out forwards;
+            }
+
+            &.slide-left {
+                animation: bgOut 1000ms ease-in-out forwards;
+            }
 
             @include breakpoint('md') {
                 background-image: url('../img/desktop-image-hero-3.jpg');
@@ -75,6 +102,10 @@
         @include breakpoint('md') {
             right: unset;
             left: 100%;
+        }
+
+        i {
+            pointer-events: none;
         }
     }
 
