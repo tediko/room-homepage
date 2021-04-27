@@ -3,12 +3,18 @@
 .kv {
     $root: &;
 
+    @include breakpoint('md') {
+        height: 67vh;
+        min-height: 440px;
+    }
+
     &__container {
         display: flex;
         flex-flow: column;
 
         @include breakpoint('md') {
             flex-flow: row;
+            height: 100%;
         }
     }
 
@@ -18,7 +24,7 @@
         
         @include breakpoint('md') {
             flex: 1 2 840px;
-            height: 534px;
+            height: 100%;
         }
     }
 
