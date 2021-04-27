@@ -19,3 +19,31 @@
         opacity: 0;
     }
 }
+
+@keyframes bgIn {
+    0% {
+        opacity: 0;
+        clip-path: ellipse(0 100% at 0% 50%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        clip-path: ellipse(110% 150% at 0% 50%);
+    }
+}
+
+@keyframes bgOut {
+    0% {
+        opacity: 0;
+        clip-path: ellipse(0 100% at 100% 50%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        clip-path: ellipse(110% 150% at 100% 50%);
+    }
+}
