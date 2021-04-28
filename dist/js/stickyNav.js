@@ -29,7 +29,7 @@ export default class StickyNav {
     navObserver(element) {
         this.options = {
             rootMargin: '0px',
-            threshold: 0.8
+            threshold: 0.6
         }
 
         this.animations = {
