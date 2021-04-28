@@ -22,6 +22,7 @@
 
         @include breakpoint('lg') {
             opacity: 0;
+            pointer-events: all;
         }
     }
 }
