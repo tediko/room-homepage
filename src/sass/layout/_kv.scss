@@ -148,6 +148,7 @@
 
     &__intro {
         padding: 72px 32px 64px 32px;
+        overflow-x: hidden;
 
         @include breakpoint('md') {
             display: flex;
@@ -155,6 +156,32 @@
             flex-flow: column;
             justify-content: center;
             padding: 0 5.25vw 32px 7vw;
+        }
+
+        &.slide {
+            #{$root}__intro-heading {
+                animation: slideTop 1000ms ease-in-out;
+
+                @include breakpoint('md') {
+                    animation: slideTopDesktop 1000ms ease-in-out;
+                }
+            }
+
+            #{$root}__intro-text {
+                animation: slideRight 1000ms ease-in-out;
+
+                @include breakpoint('md') {
+                    animation: slideRightDesktop 1000ms ease-in-out;
+                }
+            }
+
+            #{$root}__intro-link {
+                animation: slideRight 1000ms ease-in-out;
+
+                @include breakpoint('md') {
+                    animation: slideRightDesktop 1000ms ease-in-out;
+                }
+            }
         }
     }
 

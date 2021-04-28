@@ -51,6 +51,7 @@ ol[role=list] {
 /* Fonts */
 /* Media query breakpoints */
 /* Mixin to manage responsive breakpoints */
+/* Header nav animations */
 @keyframes navin {
   0% {
     top: -108px;
@@ -71,6 +72,7 @@ ol[role=list] {
     opacity: 0;
   }
 }
+/* .kv__hero-bg animations */
 @keyframes bgIn {
   0% {
     opacity: 0;
@@ -95,6 +97,63 @@ ol[role=list] {
   100% {
     opacity: 1;
     clip-path: ellipse(110% 150% at 100% 50%);
+  }
+}
+/* .kv__intro elements animations */
+@keyframes slideTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTopDesktop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRightDesktop {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 html {
@@ -293,6 +352,7 @@ i {
 }
 .kv__intro {
   padding: 72px 32px 64px 32px;
+  overflow-x: hidden;
 }
 @media (min-width: 769px) {
   .kv__intro {
@@ -301,6 +361,30 @@ i {
     flex-flow: column;
     justify-content: center;
     padding: 0 5.25vw 32px 7vw;
+  }
+}
+.kv__intro.slide .kv__intro-heading {
+  animation: slideTop 1000ms ease-in-out;
+}
+@media (min-width: 769px) {
+  .kv__intro.slide .kv__intro-heading {
+    animation: slideTopDesktop 1000ms ease-in-out;
+  }
+}
+.kv__intro.slide .kv__intro-text {
+  animation: slideRight 1000ms ease-in-out;
+}
+@media (min-width: 769px) {
+  .kv__intro.slide .kv__intro-text {
+    animation: slideRightDesktop 1000ms ease-in-out;
+  }
+}
+.kv__intro.slide .kv__intro-link {
+  animation: slideRight 1000ms ease-in-out;
+}
+@media (min-width: 769px) {
+  .kv__intro.slide .kv__intro-link {
+    animation: slideRightDesktop 1000ms ease-in-out;
   }
 }
 .kv__intro-heading {
