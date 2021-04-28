@@ -19,10 +19,11 @@
 
     &.active {
         opacity: 1;
+        pointer-events: all;
 
         @include breakpoint('lg') {
             opacity: 0;
-            pointer-events: all;
+            pointer-events: none;
         }
     }
 }
