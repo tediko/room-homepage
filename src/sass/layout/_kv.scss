@@ -23,8 +23,12 @@
         height: 360px;
         
         @include breakpoint('md') {
-            flex: 1 2 840px;
+            width: 50%;
             height: 100%;
+        }
+
+        @include breakpoint('lg') {
+            width: 60%;
         }
     }
 
@@ -152,10 +156,14 @@
 
         @include breakpoint('md') {
             display: flex;
-            flex: 1 1 600px;
+            width: 50%;
             flex-flow: column;
             justify-content: center;
             padding: 0 5.25vw 32px 7vw;
+        }
+
+        @include breakpoint('lg') {
+            width: 40%;
         }
 
         &.slide {
@@ -193,12 +201,14 @@
         margin-bottom: 16px;
 
         @include breakpoint('md') {
-            font-size: 3rem;
             letter-spacing: -2px;
         }
 
         @include breakpoint('lg') {
             margin-bottom: 25px;
+        }
+
+        @media (min-width: 1386px) {
             font-size: 3.33rem;
         }
     }
