@@ -12,12 +12,14 @@
         grid-template-columns: 1fr;
 
         @include breakpoint('md') {
-            grid-template-columns: 25vw auto 25vw;
+            grid-template-columns: 30% 33.5% calc(50% - 160px);
+            justify-content: space-between;
             height: 100%;
         }
         
         @include breakpoint('lg') {
-            grid-template-columns: 30.55vw auto 30.55vw;
+            grid-template-columns: 30% 33.5% calc(40% - 160px);
+            justify-content: space-between;
         }
     }
 
@@ -60,7 +62,11 @@
             display: flex;
             flex-flow: column;
             justify-content: center;
-            padding: 48px;
+            padding: 72px 0 64px 0;
+        }
+
+        @include breakpoint('lg') {
+            padding: 48px 0;
         }
     }
 

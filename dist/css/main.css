@@ -245,8 +245,13 @@ i {
 }
 @media (min-width: 769px) {
   .kv__hero {
-    flex: 1 2 840px;
+    width: 50%;
     height: 100%;
+  }
+}
+@media (min-width: 1025px) {
+  .kv__hero {
+    width: 60%;
   }
 }
 .kv__hero-bg, .kv__hero-bg--3, .kv__hero-bg--2, .kv__hero-bg--1 {
@@ -359,10 +364,15 @@ i {
 @media (min-width: 769px) {
   .kv__intro {
     display: flex;
-    flex: 1 1 600px;
+    width: 50%;
     flex-flow: column;
     justify-content: center;
     padding: 0 5.25vw 32px 7vw;
+  }
+}
+@media (min-width: 1025px) {
+  .kv__intro {
+    width: 40%;
   }
 }
 .kv__intro.slide .kv__intro-heading {
@@ -398,13 +408,16 @@ i {
 }
 @media (min-width: 769px) {
   .kv__intro-heading {
-    font-size: 3rem;
     letter-spacing: -2px;
   }
 }
 @media (min-width: 1025px) {
   .kv__intro-heading {
     margin-bottom: 25px;
+  }
+}
+@media (min-width: 1386px) {
+  .kv__intro-heading {
     font-size: 3.33rem;
   }
 }
@@ -681,13 +694,15 @@ i {
 }
 @media (min-width: 769px) {
   .about__container {
-    grid-template-columns: 25vw auto 25vw;
+    grid-template-columns: 30% 33.5% calc(50% - 160px);
+    justify-content: space-between;
     height: 100%;
   }
 }
 @media (min-width: 1025px) {
   .about__container {
-    grid-template-columns: 30.55vw auto 30.55vw;
+    grid-template-columns: 30% 33.5% calc(40% - 160px);
+    justify-content: space-between;
   }
 }
 .about__decorative {
@@ -723,7 +738,12 @@ i {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 48px;
+    padding: 72px 0 64px 0;
+  }
+}
+@media (min-width: 1025px) {
+  .about__info {
+    padding: 48px 0;
   }
 }
 .about__heading {
