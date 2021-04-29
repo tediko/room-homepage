@@ -702,7 +702,6 @@ i {
 @media (min-width: 1025px) {
   .about__container {
     grid-template-columns: 30% 33.5% calc(40% - 160px);
-    justify-content: space-between;
   }
 }
 .about__decorative {

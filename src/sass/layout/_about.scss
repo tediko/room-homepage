@@ -19,7 +19,6 @@
         
         @include breakpoint('lg') {
             grid-template-columns: 30% 33.5% calc(40% - 160px);
-            justify-content: space-between;
         }
     }
 
