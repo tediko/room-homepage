@@ -18,6 +18,9 @@
 ### Intro
 Hello! This is my solution to [Room Homepage - Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq) challenge. The challenge was more difficult than I thought but it was fun to get throught the problems I faced.
 
+⭐**Featured solution in [Vol. 50 of the Frontend Mentor Newsletter](https://mailchi.mp/e298ca965958/frontend-mentor-newsletter-vol-53?e=212d9dcf83).**
+
+
 ### The challenge
 
 >Your challenge is to build out this e-commerce homepage and get it looking as close to the design as possible.
